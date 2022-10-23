@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Encabezado página web -->
+<head>
+  <meta charset="UTF-8" />
+  <!-- Compatiblidad y web resposive -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Icono pestaña navegador -->
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+  <!-- Título pestaña navegador -->
+  <title>Juego del Ahorcado - JavaScript</title>
+  <!-- Estilo icono(Font) página web -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- Estilo letra(Font) página web -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
+  <!-- Estilo página web (CSS) -->
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<!-- Cuerpo página web -->
+<body>
+  <!-- Parte superior página web -->
+  <header>
+    <!-- Menú vertical -->
+    <div id="menu-vertical" class="menu-vertical">
+      <!-- Botón cierre menu vertical -->
+      <a href="#" class="boton-cierre-menu" onclick="cerrarMenu()">&times;</a>
+      <!-- Botón cambio tema -->
+      <div class="modo">
+        <!-- Botón cambio tema -->
+        <label id="switch">
+          <!-- Chackbox cambio tema -->
+          <input type="checkbox">
+            <!-- forma boton cambio tema -->
+            <span class="slider round"></span>
+            <!-- texto menu cambio tema -->
+            <p class="texto-tema">Tema</p>
+        </label>
+      </div>
+    </div>
+  </header>
+  <!-- Parte intermedia página web -->
+  <main>
+    <!-- Contenedor juego-->
+    <div class="contenedor main">
+      <!-- Menú de inicio -->
+      <div id="menu" class="menu">
+        <!-- Botones menu de inicio -->
+        <form class="btns_menu">
+          <!-- Boton empezar juego -->
+          <input id="start" class="btn btn-primary" type="button" value="Empezar Juego" />
+          <!-- Menu secundario menu inicio -->
+          <div class="menu-juntos">
+            <!-- Boton agregar palabra -->
+            <input id="add" class="btn btn-secondary" type="button" value="Agregar Palabra" />
+            <!-- Contenedor menu configuracion -->
+            <nav class="menu-configuracion">
+              <!-- Referencia de la función para abrir el menú vertical -->
+              <a href="javascript:void(0)" class="boton-configuracion" onclick="abrirMenu()">
+              <!-- Boton configuración -->
+              <span class="material-symbols-outlined">settings</span>
+              </a>
+            </nav>
+          </div>
+        </form>
+
+    
+      </div>
+
+      <div id="juego" class="no-display">
+        <div class="state-nodisplay"></div>
+        <canvas class="ahorcado" width="355" height="354"></canvas>
+        <div class="correctas"></div>
+        <div class="incorrectas"></div>
+        <div class="teclado">
+          <div class="fila1"></div>
+          <div class="fila2"></div>
+          <div class="fila3"></div>
+        </div>
+        <form class="btns_juego">
+          <input id="new" class="btn btn-primary" type="button" value="Nuevo Juego" />
+          <input id="des" class="btn btn-secondary" type="button" value="Desistir" />
+          <!-- Contenedor menu configuracion -->
+          <nav class="menu-configuracion">
+            <!-- Referencia de la función para abrir el menú vertical -->
+            <a href="javascript:void(0)" class="boton-configuracion2" onclick="abrirMenu()">
+            <!-- Boton configuración -->
+            <span class="material-symbols-outlined">settings</span>
+            </a>
+          </nav>
+        </form>
+      </div>
+      <div id="addWord" class="no-display">
+        <form class="addWord_form">
+          <textarea name="text_in_area" id="texto" placeholder="Ingrese una palabra aqui..." required></textarea>
+          <div class="info">
+            <p id="warning">Máx. 8 letras mayúsculas</p>
+          </div>
+          <div class="btns_addWord">
+            <input id="save" class="btn btn-primary" type="button" value="Guardar y empezar" />
+            <input id="cancel" class="btn btn-secondary" type="button" value="Cancelar" />
+          </div>
+          <dialog id="dialog" class="dialog">
+            <input type="button" value="x" />
+            <p>Solo se admiten letras mayúsculas sin acentos.</p>
+          </dialog>
+          <dialog id="dialog2" class="dialog">
+            <input type="button" value="x" />
+            <p>La palabra debe tener como maximo 8 letras y como minimo 1 letra.</p>
+          </dialog>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer>
+   
+  </footer>
+</body>
+<script src="./js/script.js"></script>
+
+</html>
